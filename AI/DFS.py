@@ -23,4 +23,10 @@ def dfs(graph, start, visited=None):
     return visited
 
 print("Following is sequence of dfs: ")
-dfs(graph,'0')
+dfs(graph,'1')
+
+
+'''
+Following is sequence of dfs: 
+1 3 0 2 4 
+'''
