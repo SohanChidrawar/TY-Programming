@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+
+    <link
+    rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./css/about.css">
+
+</head>
+<body>
+
+<section class="header">
+    <a href="home.html" class ="logo">travel</a>
+    <nav class="navbar">
+        <a href="home.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="package.html">Package</a>
+        <a href="book.html">Book</a>
+    </nav>
+    <div id="menu-btn" class="fas fa-bars"></div>
+</section>
+
+<!-- header section starts here -->
+
+    <div class="heading" style="background: url(images/book.jpg) no-repeat;">
+        <h1>Book now!</h1>
+    </div>
+
+
+<!-- header section ends here -->
+
+
+<!-- booking section starts -->
+
+<section class="booking">
+    <h1 class="heading-title">BOok your trip!</h1>
+    <form action="book_form.html" method="post" class="book-form" onsubmit = "return validateForm()">
+        <div class="flex">
+            <div class="inputBox">
+                <span>Name:</span>
+                <input type="text" placeholder="Enter your name" name="name" id="name">
+            </div>
+            <div class="inputBox">
+                <span>Email:</span>
+                <input type="email" placeholder="Enter your email" name="email" id='email'>
+            </div>
+            <div class="inputBox">
+                <span>Phone:</span>
+                <input type="number" placeholder="Enter your phone no" name="phone" id='phone'>
+            </div>
+            <div class="inputBox">
+                <span>Address</span>
+                <input type="text" placeholder="Enter your address" name="address" id='address'>
+            </div>
+            <div class="inputBox">
+                <span>Destination:</span>
+                <input type="text" placeholder="Place you want to visit" name="location" id='location'>
+            </div>
+            <div class="inputBox">
+                <span>how many :</span>
+                <input type="number" placeholder="nummber of guests" name="guests" min='1'>
+            </div>
+            <div class="inputBox">
+                <span>Arrivals:</span>
+                <input type="date" name="arrivals" id='arrival'>
+            </div>
+            <div class="inputBox">
+                <span>Leaving</span>
+                <input type="date" name="leaving" id='leaving'>
+            </div>
+        </div>
+        <input type="submit" value="submit" class="btn" name="send">
+    </form>
+</section>
+
+<!-- booking section ends -->
+
+<!-- validation -->
+
+<script>
+    function validateForm() {
+        // Get form inputs
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const phone = document.getElementById("phone").value.trim();
+        const address = document.getElementById("address").value.trim();
+        
+    
+        // Validate name
+        if (name === "") {
+            alert("Please enter your name.");
+            return false;
+        }
+    
+        // Validate email
+        if (email === "") {
+            alert("Please enter your email.");
+            return false;
+        } else if (!validateEmail(email)) {
+            alert("Please enter a valid email address.");
+            return false;
+        }
+    
+        // Validate phone number
+        if (phone === "") {
+            alert("Please enter your phone number.");
+            return false;
+        } else if (!validatePhoneNumber(phone)) {
+            alert("Please enter a valid phone number.");
+            return false;
+        }
+    
+        // Validate address
+        if (address === "") {
+            alert("Please enter your address.");
+            return false;
+        }
+
+    
+        // If all validation passes, return true to submit the form
+        return true;
+    }
+    
+    function validateEmail(email) {
+        // Email validation regular expression
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+    }
+    
+    function validatePhoneNumber(phone) {
+        // Phone number validation regular expression
+        const re = /^\d{10}$/;
+        return re.test(phone);
+    }
+</script>
+
+
+<!-- footer section starts -->
+
+<section class="footer">
+    <div class="box-container">
+        <div class="box">
+            <h3>Quick links</h3>
+                <a href="home.html"> <i class="fas fa-angle-right"></i> Home</a>
+                <a href="about.html"> <i class="fas fa-angle-right"></i>About</a>
+                <a href="package.html"> <i class="fas fa-angle-right"></i>Package</a>
+                <a href="book.html"> <i class="fas fa-angle-right"></i>Book</a>
+        </div>
+        <div class="box">
+            <h3>Extra links</h3>
+            <a href="#"> <i class="fas fa-angle-right"></i> Ask quesions</a>
+            <a href="#"> <i class="fas fa-angle-right"></i> About us</a>
+            <a href="#"> <i class="fas fa-angle-right"></i> Privacy policy</a>
+            <a href="#"> <i class="fas fa-angle-right"></i> Terms of use</a>
+        </div>
+        <div class="box">
+            <h3>Contact info</h3>
+            <a href="#"> <i class="fas fa-phone"></i> (+91)7775554123</a>
+            <a href="#"> <i class="fas fa-phone"></i> +2021115615</a>
+            <a href="#"> <i class="fas fa-envelope"></i> sohan@gmail.com</a>
+            <a href="#"> <i class="fas fa-map"></i>Pune, India 411014</a>
+        </div>
+        <div class="box">
+            <h3>Follow us</h3>
+            <a href="#"> <i class="fab fa-facebook"></i>Facebook</a>
+            <a href="#"> <i class="fab fa-twitter"></i>Twitter</a>
+            <a href="#"> <i class="fab fa-instagram"></i>Instagram</a>
+            <a href="#"> <i class="fab fa-github"></i>Github</a>
+        </div>
+    </div>
+
+    
+
+</section>
+
+
+<!-- footer section ends -->
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script src="./js/script.js"></script>
+
+</body>
+</html>
