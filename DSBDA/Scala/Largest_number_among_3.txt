@@ -1,0 +1,34 @@
+// Initiate 3 Variables
+var a: Int = 69
+var b: Int = 420
+var c: Int = 390
+
+// Check if a is greater than b
+if (a > b)
+{
+	// Check if a is greater than c
+	if(a > c)
+	{
+		println("a is largest");
+	}
+
+	else
+	{
+		println("c is largest")
+	}
+
+}
+
+else
+{
+	// check if b is greater than c
+	if(b > c)
+	{
+		println("b is largest")
+	}
+
+	else
+	{
+		println("c is largest")
+	}
+}
