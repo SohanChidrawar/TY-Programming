@@ -1,32 +1,50 @@
+''' graph = {'A':['B', 'E', 'C'],
+         'B':['A', 'D', 'E'],
+         'D':['B', 'E'],
+         'E':['A', 'D', 'B'],
+         'C':['A', 'F', 'G'],      
+         'F':['C'],
+         'G':['C']
+         }
+'''
+'''
 graph = {
-    '0' : set(['1','2']),
-    '1': set(['0', '3', '4']),
-    '2': set(['0']),
-    '3': set(['1']),
-    '4': set(['2', '3'])
+    '0' : ['1','2','3'],
+    '1' : ['0'],
+    '2' : ['3','4'],
+    '3' : ['0','2'],
+    '4' : ['2']
 }
+'''
+graph = {
+    '0' : ['1','2'],
+    '1' : ['2'],
+    '2' : ['3','0'],
+    '3' : ['3'],
+}
+visited = []
+stack = []
+def dfs(visited, graph, start):
+    # print("DFS traveral is: ")
+    stack.append(start)
+    visited.append(start)
+    while stack:
+        node = stack[-1]
+        stack.pop()
+        print(node, end=' ')
+        
+        for n in graph[node]:
+            if n not in visited:
+                visited.append(n)
+                stack.append(n)
 
-def dfs(graph, start, visited=None):
-    if visited is None:
-        visited = set()
-
-    # Add the starting node to visited set
-    visited.add(start)
-
-    print(start, end=" ")
-
-    # Recursively visit all the unvisited adjacent nodes of the current node
-    for next in graph[start] - visited:
-        dfs(graph, next, visited)
-
-    # Return the visited set after all nodes have been visited
-    return visited
-
-print("Following is sequence of dfs: ")
-dfs(graph,'1')
-
+print('DFS traversal is: ')
+dfs(visited, graph, '2')
 
 '''
-Following is sequence of dfs: 
-1 3 0 2 4 
+OUTPUT
+
+DFS traversal is: 
+2 0 1 3 
+
 '''
