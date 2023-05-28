@@ -1,0 +1,18 @@
+public class Demo1 {
+    public void CreateAccount(String Name, String Phone) {
+        account acc = new account();
+        acc.Name = Name;
+        acc.Phone = Phone;
+        insert acc;
+        System.debug('Inserted account: '+ acc.Name);
+    }
+}
+
+---------------------------------------------------------------------------------------
+
+Type the Following in Debug Anonymous Window
+
+Demo1 acc = new Demo1();
+acc.CreateAccount('Sohan', '987654');
+
+---------------------------------------------------------------------------------------
