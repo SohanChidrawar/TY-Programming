@@ -1,10 +1,10 @@
+
 graph = {
-  '5' : ['3','7'],
-  '3' : ['2', '4'],
-  '7' : ['8'],
-  '2' : [],
-  '4' : [],
-  '8' : []
+  '0' : ['1','2'],
+  '1' : ['2','3'],
+  '2' : ['4'],
+  '3' : ['4'],
+  '4' : []
 }
 
 visited = []
@@ -25,10 +25,10 @@ def bfs(visited, graph, node):
 
 # Driver Code
 print("Following is the Breadth-First Search")
-bfs(visited, graph, '5')
-
+bfs(visited, graph, '0')
 
 '''
+output:
 Following is the Breadth-First Search
-5 3 7 2 4 8 
+0 1 2 3 4 
 '''
