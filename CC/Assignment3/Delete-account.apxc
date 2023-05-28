@@ -1,0 +1,18 @@
+public class Demo3 {
+    public void DeleteAccount() {
+        List<Account> oldAccounts = new List<Account>();
+        for(Account acc: [SELECT Name, Phone FROM Account WHERE Name='Sohan']) {
+            delete acc;
+        }
+        update oldAccounts;
+    }
+}
+
+------------------------------------------------------------------------------------
+
+Type the following in Debug Anonymous Window
+
+Demo3 acc = new Demo3();
+acc.DeleteAccount();
+
+--------------------------------------------------------------------------------------
